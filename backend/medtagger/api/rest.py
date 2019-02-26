@@ -33,6 +33,7 @@ from medtagger.api.datasets.service_rest import datasets_ns as datasets_rest_ns 
 from medtagger.api.tasks.service_rest import tasks_ns  # noqa
 from medtagger.api.users.service import users_ns  # noqa
 from medtagger.api.auth.service import auth_ns  # noqa
+from medtagger.api.image_server.service import image_server_ns  # noqa
 
 logger = logging.getLogger(__name__)
 
