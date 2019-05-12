@@ -35,7 +35,7 @@ By default, Docker-Compose will set up latest stable version of MedTagger. You c
  with different version using appropriate environment variable:
 
 ```bash
-$ export MEDTAGGER_VERSION=v1.0.1
+$ export MEDTAGGER_VERSION=1.0.1
 $ docker-compose up
 ``` 
 
@@ -64,7 +64,7 @@ To upgrade MedTagger using Docker Compose you can pull new images for given vers
  containers. It may look like this:
 
 ```bash
-$ export MEDTAGGER_VERSION=v1.0.1
+$ export MEDTAGGER_VERSION=1.0.1
 $ export MEDTAGGER_SERVICES_TO_UPGRADE="medtagger_frontend medtagger_backend_rest \
 medtagger_backend_websocket medtagger_backend_worker medtagger_backend_database_migrations"
 $ docker-compose pull 
