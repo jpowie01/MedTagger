@@ -30,7 +30,7 @@ configuration = config.AppConfiguration()
 websocket_ping_timeout = configuration.getint('api', 'websocket_ping_timeout', fallback=5)
 websocket_ping_interval = configuration.getint('api', 'websocket_ping_interval', fallback=3)
 web_socket = SocketIO(logger=True, engineio_logger=True, ping_timeout=websocket_ping_timeout,
-                      ping_interval=websocket_ping_interval)
+                      ping_interval=websocket_ping_interval, cors_allowed_origins='*')
 
 
 def setup_connection_to_sql_and_storage() -> None:
