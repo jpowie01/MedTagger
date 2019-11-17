@@ -98,10 +98,6 @@ export class MarkerComponent extends ScanViewerComponent implements OnInit, OnCh
         this.changeSlice(newSliceIndex);
     }
 
-    public canChangeSlice(): boolean {
-        return this.currentTool ? this.currentTool.canChangeSlice() : true;
-    }
-
     protected createDrawingContext(): DrawingContext {
         const drawingContext = super.createDrawingContext();
         drawingContext.currentTag = this.currentTag;

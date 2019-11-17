@@ -8,7 +8,7 @@
 </section>
 
 <section *ngIf="multipleScans">
-    <input type="file" (change)="onNativeInputFileSelect($event)" #inputFile hidden multiple disabled directory/>
+    <input type="file" (change)="onNativeInputFileSelect($event)" #inputFile webkitdirectory hidden multiple directory/>
     <button type="button" mat-raised-button (click)="selectFile()">
         <mat-icon>folder</mat-icon>
         <span [hidden]="scans.length">{{ 'COMPONENT.UPLOAD_SELECTOR.SELECT_DIR' | translate }}</span>

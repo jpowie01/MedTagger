@@ -143,7 +143,11 @@ export class UploadScansSelectorComponent {
             return Promise.resolve();
         }
 
-        return this.prepareSingleScan();
+        if (!this.multipleScans) {
+            return this.prepareSingleScan();
+        }
+
+        return this.prepareMultipleScans();
     }
 
     private prepareSingleScan(): Promise<void> {
@@ -188,7 +192,7 @@ export class UploadScansSelectorComponent {
         const promises: Array<Promise<any>> = [];
 
         for (const selectedFile of this.userSelectedFiles) {
-            const slicePath = ''; // selectedFile.webkitRelativePath;
+            const slicePath = selectedFile['webkitRelativePath'];
             const currentScanDirectory = slicePath.split('/').slice(0, -1).join('/');
             let scanForThisSlice = this.scans.find((scan: SelectedScan) => {
                 return scan.directory === currentScanDirectory;

@@ -221,7 +221,7 @@ export class ScanViewerComponent implements OnInit, AfterViewInit, OnChanges {
 
     public changeSlice(sliceIndex: number): void {
         console.log('Change slice to: ', sliceIndex);
-        if (this.currentSlice !== sliceIndex) {
+        if (this.currentSlice !== sliceIndex && this.canChangeSlice(sliceIndex)) {
             this.drawingContext.currentSlice = sliceIndex;
             this.currentImage.src = (this.slices.get(sliceIndex) && this.slices.get(sliceIndex).source) || '';
             this.unmodifiedImageData = null;
@@ -229,6 +229,10 @@ export class ScanViewerComponent implements OnInit, AfterViewInit, OnChanges {
             this.redrawSelections();
             this.requestSlicesIfNeeded();
         }
+    }
+
+    private canChangeSlice(sliceIndexCandidate: number): boolean {
+        return this.getMaxSliceIndex() >= sliceIndexCandidate && this.getMinSliceIndex() <= sliceIndexCandidate;
     }
 
     public getMinSliceIndex(): number {

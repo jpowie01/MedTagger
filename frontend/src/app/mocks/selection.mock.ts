@@ -9,13 +9,7 @@ export class SelectionMock extends SliceSelection {
     }
 
     getAdditionalData(): Object {
-        return {
-            EXAMPLE_PARAM_1: 1337,
-            EXAMPLE_PARAM_2: this.labelTool + this.labelTag.key,
-            EXAMPLE_PARAM_3: {
-                EXAMPLE_PARAM_3_1: 'Example'
-            }
-        };
+        return {};
     }
 
     toJSON(): Object {
